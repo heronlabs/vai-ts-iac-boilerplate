@@ -1,4 +1,4 @@
-import {AppFactory} from './src';
+import {AppFactory} from './src/entry-point';
 
 const app = AppFactory.make();
 
