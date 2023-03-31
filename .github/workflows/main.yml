@@ -1,8 +1,8 @@
 name: Build IaC Stack
 
 on:
-  - push
   - workflow_dispatch
+  - push
 
 jobs:
   pipeline:
@@ -11,13 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Checkout action repository
+      - name: '[ACTION] | Clone build iac action'
         uses: actions/checkout@v3
         with:
           repository: heronlabs/build-iac-action
-          ref: 1.0.0
+          ref: 2.0.0
           token: ${{ secrets.AUTHOR_PERSONAL_ACCESS}}
           path: ./build-iac-action
 
-      - name: Run action
+      - name: '[ACTION] | Run build iac action'
         uses: './build-iac-action/application/github'
